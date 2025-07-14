@@ -5,7 +5,7 @@ import { ThrottlerModule } from '@nestjs/throttler';
 // Core modules
 import { AuthModule } from './modules/auth/auth.module';
 // import { UsersModule } from './modules/users/users.module';
-// import { MatchesModule } from './modules/matches/matches.module';
+import { MatchesModule } from './modules/matches/matches.module';
 // import { WalletModule } from './modules/wallet/wallet.module';
 // import { PaymentsModule } from './modules/payments/payments.module';
 // import { CoursesModule } from './modules/courses/courses.module';
@@ -38,7 +38,7 @@ import { SharedModule } from './shared/shared.module';
     // Feature modules (add back as you implement them)
     AuthModule,
     // UsersModule,
-    // MatchesModule,
+    MatchesModule,
     // WalletModule,
     // PaymentsModule,
     // CoursesModule,
