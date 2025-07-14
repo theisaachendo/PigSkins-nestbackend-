@@ -60,7 +60,7 @@ export class LowCostConfig {
     }
 
     return new Stripe(stripeSecretKey, {
-      apiVersion: '2023-10-16',
+      apiVersion: '2023-08-16',
     });
   }
 
@@ -85,7 +85,7 @@ export class LowCostConfig {
   getStorageConfig() {
     return {
       bucket: this.configService.get('SUPABASE_STORAGE_BUCKET') || 'pigskins-assets',
-      maxFileSize: parseInt(this.configService.get('MAX_FILE_SIZE')) || 5242880,
+      maxFileSize: parseInt(this.configService.get('MAX_FILE_SIZE') || '5242880'),
     };
   }
 

@@ -4,13 +4,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ThrottlerModule } from '@nestjs/throttler';
 // Core modules
 import { AuthModule } from './modules/auth/auth.module';
-import { UsersModule } from './modules/users/users.module';
-import { MatchesModule } from './modules/matches/matches.module';
-import { WalletModule } from './modules/wallet/wallet.module';
-import { PaymentsModule } from './modules/payments/payments.module';
-import { CoursesModule } from './modules/courses/courses.module';
-import { NotificationsModule } from './modules/notifications/notifications.module';
-import { WebsocketModule } from './modules/websocket/websocket.module';
+// import { UsersModule } from './modules/users/users.module';
+// import { MatchesModule } from './modules/matches/matches.module';
+// import { WalletModule } from './modules/wallet/wallet.module';
+// import { PaymentsModule } from './modules/payments/payments.module';
+// import { CoursesModule } from './modules/courses/courses.module';
+// import { NotificationsModule } from './modules/notifications/notifications.module';
+// import { WebsocketModule } from './modules/websocket/websocket.module';
 
 // Shared modules
 import { DatabaseModule } from './database/database.module';
@@ -35,17 +35,17 @@ import { SharedModule } from './shared/shared.module';
     // Database
     DatabaseModule,
 
-    // Feature modules
+    // Feature modules (add back as you implement them)
     AuthModule,
-    UsersModule,
-    MatchesModule,
-    WalletModule,
-    PaymentsModule,
-    CoursesModule,
-    NotificationsModule,
-    WebsocketModule,
+    // UsersModule,
+    // MatchesModule,
+    // WalletModule,
+    // PaymentsModule,
+    // CoursesModule,
+    // NotificationsModule,
+    // WebsocketModule,
 
-    // Shared utilities
+    // Shared utilities (add back as you implement it)
     SharedModule,
   ],
   controllers: [],

@@ -60,7 +60,7 @@ export class ServicesConfig {
     }
 
     return new Stripe(stripeSecretKey, {
-      apiVersion: '2023-10-16',
+      apiVersion: '2023-08-16',
     });
   }
 
@@ -85,7 +85,7 @@ export class ServicesConfig {
   getStorageConfig() {
     return {
       bucket: this.configService.get('SUPABASE_STORAGE_BUCKET'),
-      maxFileSize: parseInt(this.configService.get('MAX_FILE_SIZE')) || 5242880,
+      maxFileSize: parseInt(this.configService.get('MAX_FILE_SIZE') || '5242880'),
       uploadPath: this.configService.get('UPLOAD_PATH') || './uploads',
     };
   }
