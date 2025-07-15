@@ -6,9 +6,9 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+    "build": "node api.js && nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
+    "start": "node api.js && nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
@@ -31,7 +31,6 @@
     "@nestjs/websockets": "^10.0.0",
     "@nestjs/platform-socket.io": "^10.0.0",
     "@nestjs/throttler": "^5.0.0",
-
     "typeorm": "^0.3.17",
     "pg": "^8.11.0",
     "bcryptjs": "^2.4.3",
@@ -100,4 +99,4 @@
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
   }
-} 
+}
