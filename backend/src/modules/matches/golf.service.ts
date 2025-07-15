@@ -26,11 +26,16 @@ export class GolfService {
 
       const data = await response.json();
       
+      // Check if we have valid course data, even if API requests are exhausted
+      if (data.courseID && data.courseName) {
+        return data as GolfCourseDto;
+      }
+      
       if (data.message === 'Invalid API key') {
         throw new HttpException('Invalid Golf API key', HttpStatus.UNAUTHORIZED);
       }
 
-      return data as GolfCourseDto;
+      throw new HttpException('Failed to fetch course data', HttpStatus.INTERNAL_SERVER_ERROR);
     } catch (error) {
       console.error('Golf API error:', error);
       throw new HttpException('Failed to fetch course data', HttpStatus.INTERNAL_SERVER_ERROR);
