@@ -8,7 +8,11 @@ export class GolfService {
   private readonly baseUrl = 'https://www.golfapi.io/api/v2.3';
 
   constructor(private configService: ConfigService) {
-    this.apiKey = 'ec0b1d81-c28f-4274-b645-ba4d701507cb'; // TODO: Move to environment variables
+    const apiKey = this.configService.get('GOLF_API_KEY');
+    if (!apiKey) {
+      throw new Error('GOLF_API_KEY environment variable is required');
+    }
+    this.apiKey = apiKey;
   }
 
   async getCourse(courseID: string): Promise<GolfCourseDto> {
